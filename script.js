@@ -24,6 +24,6 @@ function letterCombinations(input_digit,ans) {
 	for(let i = 0; i < currstr.length;i++){
 		letterCombinations(input_digit + 1, ans + currstr[i]);
 	}
-	return res;
+	return res.sort();
 }
 module.exports = letterCombinations;
