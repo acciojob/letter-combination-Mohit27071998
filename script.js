@@ -1,3 +1,6 @@
+
+
+
 let mapping = {
 	"2":"abc",
 	"3":"def",
@@ -11,19 +14,24 @@ let mapping = {
 
 
 let res = [];
-function letterCombinations(input_digit,ans) {
-  //Complete the function
-  
-	if(input_digit >= sstr.length){
+function helper(idx,ans,sstr){
+  // 	console.log(idx)
+  	if(idx >= sstr.length){
 		res.push(ans);
 		// console.log(res)
 		return;
 	}
-	let currstr = mapping[sstr[input_digit]]
+	let currstr = mapping[sstr[idx]]
 // 	console.log(currstr)
 	for(let i = 0; i < currstr.length;i++){
-		letterCombinations(input_digit + 1, ans + currstr[i]);
+		helper(idx + 1, ans + currstr[i],sstr);
 	}
 	return res.sort();
+}
+function letterCombinations(input_digit) {
+  //Complete the function
+  return helper(0,"",input_digit);
+  
+
 }
 module.exports = letterCombinations;
