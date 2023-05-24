@@ -29,8 +29,9 @@ function helper(idx,ans,sstr){
 }
 function letterCombinations(input_digit) {
   //Complete the function
-  return helper(0,"",input_digit);
-  
+	let ans = "";
+ans = helper(0,"",input_digit);
+  return ans;
 
 }
 module.exports = letterCombinations;
